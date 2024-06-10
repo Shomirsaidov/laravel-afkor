@@ -1,0 +1,12 @@
+pages 
+
+1. single product
+2. home page
+3. catalog
+	- categories
+	- sections
+4. basket
+5. profile
+6. saved
+7. search
+

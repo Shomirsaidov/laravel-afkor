@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
+use App\Models\Order;
 
 class Product extends Model
 {
@@ -30,6 +31,16 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+    
     /**
      * The attributes that should be cast to native types.
      *

@@ -4,18 +4,18 @@
 
 @section('content')
     <div class="orderStep1">
-        <div class="my-8 font-bold">
+        <div class="mt-16 font-bold">
             <h1 class="text-xl">Корзина</h1>
         </div>
 
         <!-- Container to display the products -->
         <div id="products-container"></div>
 
-        <!-- Container to display the total price -->
+        <!-- Container to display the Общая сумма -->
         <h1 id="total-price" class="text-2xl my-4"></h1>
 
         <div class="mt-6">
-            <button type="submit" class="my-4 next w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <button type="submit" class="my-4 next w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg1 focus:outline-none focus:ring-2 focus:ring-offset-2">
                 Далее
             </button>
         </div>
@@ -52,7 +52,7 @@
 
             <!-- Submit Button -->
             <div class="mt-6">
-                <button id="makeOrder" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                <button id="makeOrder" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg23 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     Заказать
                 </button>
             </div>
@@ -88,16 +88,16 @@
                             // Initialize the quantity property for each product
                             product.quantity = 1;
                             
-                            var productHtml = '<div class="product border-2 p-2 my-4" data-product-id="' + product.id + '">' +
-                                              '<h2>' + product.name + '</h2>' +
-                                              '<img src="' + JSON.parse(product.images)[0] + '" width="100">' +
-                                              '<p>Price: <span class="product-price">' + product.price + '</span></p>' +
-                                              '<div class="quantity-controls">' +
-                                                  '<button class="decrease-quantity">-</button>' +
+                            var productHtml = '<div class="product flex space-x-4 items-center space-y-4 border-2 p-2 my-4" data-product-id="' + product.id + '">' +
+                                            '<img class="rounded-xl" src="' + JSON.parse(product.images)[0] + '" width="100">' +
+                                            '<div><h2>' + product.name + '</h2>' +
+                                              '<p><span class="product-price text-green-700">' + product.price + '</span></p>' +
+                                              '<div class="quantity-controls space-x-4 text-xl">' +
+                                                  '<button class="decrease-quantity p-4 border-2 rounded-lg text-2xl">-</button>' +
                                                   '<span class="product-quantity">1</span>' +
-                                                  '<button class="increase-quantity">+</button>' +
+                                                  '<button class="increase-quantity p-4 border-2 rounded-lg text-2xl">+</button>' +
                                               '</div>' +
-                                              '</div>';
+                                              '</div></div>';
                             $('#products-container').append(productHtml);
                             totalPrice += parseFloat(product.price);
                         });
@@ -109,17 +109,17 @@
 
                         console.log(order);
 
-                        // Update the total price
-                        $('#total-price').text('Total Price: ' + totalPrice.toFixed(2));
+                        // Update the Общая сумма
+                        $('#total-price').text('Общая сумма: ' + totalPrice.toFixed(2));
                     } else {
                         // If no products, display a message
                         $('#products-container').append('<p>No products found.</p>');
-                        $('#total-price').text('Total Price: 0.00');
+                        $('#total-price').text('Общая сумма: 0.00');
                     }
                 },
                 error: function(xhr) {
                     $('#products-container').append('<p>Пока пусто.</p>');
-                    $('#total-price').text('Total Price: 0.00');
+                    $('#total-price').text('Общая сумма: 0.00');
                 }
             });
 
@@ -157,9 +157,9 @@
             });
 
             function updateTotalPrice(amount) {
-                var currentTotal = parseFloat($('#total-price').text().replace('Total Price: ', ''));
+                var currentTotal = parseFloat($('#total-price').text().replace('Общая сумма: ', ''));
                 var newTotal = currentTotal + amount;
-                $('#total-price').text('Total Price: ' + newTotal.toFixed(2));
+                $('#total-price').text('Общая сумма: ' + newTotal.toFixed(2));
 
                 order.total_price = newTotal;
                 console.log(order);

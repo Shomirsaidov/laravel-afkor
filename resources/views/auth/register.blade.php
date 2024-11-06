@@ -1,5 +1,7 @@
 @extends('layout.app')
 
+@section('page-title') Регистрация  @endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -69,7 +71,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Пвоторите пароль') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Повторите пароль') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="mt-1 border-2 outline-none p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" name="password_confirmation" required autocomplete="new-password">
@@ -80,10 +82,14 @@
                             
 
 
-                        <div class="mt-6">
-                            <button type="submit" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        <div class="mt-6 my-8">
+                            <button type="submit" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                 Зарегистрироваться
                             </button>
+
+                            <p class="text-center mt-4">
+                                <a href="/login" >Войти в аккаунт</a>
+                            </p>
                         </div>
 
 

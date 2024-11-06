@@ -4,6 +4,12 @@
 
 @section('content')
 
+   <div class="">
+    @include('inc.search')
+    @include('inc.new')
     @include('inc.categories')
+    @include('inc.sales')
+    @include('inc.top')
+</div>
 
 @endsection

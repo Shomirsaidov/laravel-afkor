@@ -273,6 +273,58 @@ Correct the cursor style of increment and decrement buttons in Safari.
 2. Correct the outline style in Safari.
 */
 
+.bg1 {
+  background: #071952;
+}
+
+.text1 {
+  color: #071952;
+}
+
+.bg2 {
+  background: #088395;
+}
+
+.text2 {
+  color: #088395;
+}
+
+#addBasket:focus {
+  background: #088395;
+}
+
+.bg3 {
+  background: #37b7c3;
+}
+
+.bg12 {
+  background: linear-gradient(45deg, #37b7c3, #088395);
+}
+
+.bg23 {
+  background: linear-gradient(45deg, #071952, #088395);
+}
+
+.text3 {
+  color: #37b7c3;
+}
+
+.bg4 {
+  background: #ebf4f6;
+}
+
+.text4 {
+  color: #ebf4f6;
+}
+
+.border-bg3 {
+  border: 2px #088395 solid;
+}
+
+
+
+
+
 [type='search'] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -594,3 +646,4 @@ video {
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+

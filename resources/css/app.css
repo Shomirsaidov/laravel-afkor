@@ -4,4 +4,6 @@
 
 body {
     background: rgb(226, 226, 237);
+    font-family: 'Jost', 'sans-serif';
+    font-weight: 500;
 }
